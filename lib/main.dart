@@ -15,6 +15,10 @@ class Xylophone extends StatefulWidget {
 class _XylophoneState extends State<Xylophone> {
   AudioPlayer audioPlayer = AudioPlayer();
 
+  void playSound(int songNumber) {
+    audioPlayer.play(AssetSource('note$songNumber.wav'));
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,7 +37,7 @@ class _XylophoneState extends State<Xylophone> {
                   backgroundColor: Colors.amber,
                 ),
                 onPressed: () {
-                  audioPlayer.play(AssetSource('note1.wav'));
+                  playSound(1);
                 },
                 child: const Text(
                   'Click here to play',
@@ -47,7 +51,7 @@ class _XylophoneState extends State<Xylophone> {
                   backgroundColor: Colors.blue,
                 ),
                 onPressed: () {
-                  audioPlayer.play(AssetSource('note2.wav'));
+                  playSound(2);
                 },
                 child: const Text(
                   'Click here to play',
@@ -61,7 +65,7 @@ class _XylophoneState extends State<Xylophone> {
                   backgroundColor: Colors.red,
                 ),
                 onPressed: () {
-                  audioPlayer.play(AssetSource('note3.wav'));
+                  playSound(3);
                 },
                 child: const Text(
                   'Click here to play',
