@@ -35,7 +35,40 @@ class _XylophoneState extends State<Xylophone> {
                 onPressed: () {
                   audioPlayer.play(AssetSource('note1.wav'));
                 },
-                child: const Text('Click here to play'),
+                child: const Text(
+                  'Click here to play',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                ),
+                onPressed: () {
+                  audioPlayer.play(AssetSource('note2.wav'));
+                },
+                child: const Text(
+                  'Click here to play',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.red,
+                ),
+                onPressed: () {
+                  audioPlayer.play(AssetSource('note3.wav'));
+                },
+                child: const Text(
+                  'Click here to play',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ],
           ),
