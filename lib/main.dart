@@ -27,6 +27,9 @@ class _XylophoneState extends State<Xylophone> {
       child: TextButton(
         style: TextButton.styleFrom(
           backgroundColor: color,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.zero),
+          ),
         ),
         onPressed: () {
           playSound(soundNumber);
