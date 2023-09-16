@@ -28,13 +28,14 @@ class _XylophoneState extends State<Xylophone> {
         body: SafeArea(
           child: Column(
             children: [
-              Container(
-                child: TextButton(
-                  onPressed: () {
-                    audioPlayer.play(AssetSource('note1.wav'));
-                  },
-                  child: Text('Hi'),
+              TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.amber,
                 ),
+                onPressed: () {
+                  audioPlayer.play(AssetSource('note1.wav'));
+                },
+                child: const Text('Click here to play'),
               ),
             ],
           ),
