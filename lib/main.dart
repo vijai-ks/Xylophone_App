@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 void main() {
   runApp(const Xylophone());
@@ -12,6 +13,8 @@ class Xylophone extends StatefulWidget {
 }
 
 class _XylophoneState extends State<Xylophone> {
+  AudioPlayer audioPlayer = AudioPlayer();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +31,7 @@ class _XylophoneState extends State<Xylophone> {
               Container(
                 child: TextButton(
                   onPressed: () {
-                    print('Hi');
+                    audioPlayer.play(AssetSource('note1.wav'));
                   },
                   child: Text('Hi'),
                 ),
