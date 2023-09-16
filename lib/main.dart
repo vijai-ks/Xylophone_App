@@ -19,6 +19,29 @@ class _XylophoneState extends State<Xylophone> {
     audioPlayer.play(AssetSource('note$songNumber.wav'));
   }
 
+  Expanded songButton(
+      {required Color color,
+      required String songName,
+      required int soundNumber}) {
+    return Expanded(
+      child: TextButton(
+        style: TextButton.styleFrom(
+          backgroundColor: color,
+        ),
+        onPressed: () {
+          playSound(soundNumber);
+        },
+        child: Text(
+          'Play $songName',
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,49 +54,18 @@ class _XylophoneState extends State<Xylophone> {
         ),
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.amber,
-                ),
-                onPressed: () {
-                  playSound(1);
-                },
-                child: const Text(
-                  'Click here to play',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                ),
-                onPressed: () {
-                  playSound(2);
-                },
-                child: const Text(
-                  'Click here to play',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.red,
-                ),
-                onPressed: () {
-                  playSound(3);
-                },
-                child: const Text(
-                  'Click here to play',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+              songButton(color: Colors.amber, soundNumber: 1, songName: 'Tong'),
+              songButton(color: Colors.red, soundNumber: 2, songName: 'Ting'),
+              songButton(
+                  color: Colors.blue, soundNumber: 3, songName: 'Ting lite'),
+              songButton(
+                  color: Colors.orange, soundNumber: 4, songName: 'Ting large'),
+              songButton(
+                  color: Colors.pink, soundNumber: 5, songName: 'Ting soft'),
+              songButton(
+                  color: Colors.blueGrey, soundNumber: 6, songName: 'Tine'),
             ],
           ),
         ),
